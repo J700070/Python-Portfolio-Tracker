@@ -22,8 +22,8 @@ with open("config.json") as json_data_file:
 
 # Process Data
 degiro_transactions = parseDegiro(degiro_transactions)
-totalValue, group = getPortfolio(degiro_transactions)
-lastYearDiff = totalValue - data["lastYearPortfolioValue"]
+total_value, number_of_positions, group = getPortfolio(degiro_transactions)
+lastYearDiff = total_value - data["lastYearPortfolioValue"]
 # Show Data
 # ==========================================================================
 st.title('Portfolio Tracker')
@@ -32,15 +32,15 @@ st.title('Portfolio Tracker')
 col1, col2, col3, col4 = st.columns(4)
 
 col1.metric('Portfolio Value',
-            "$" + "{:,}".format(round(totalValue, 2)), f"${round(lastYearDiff, 2)}")
+            "$" + "{:,}".format(round(total_value, 2)), f"{round(lastYearDiff, 2)} $")
 
-col2.metric("Daily Change",
-            f"${round(12312,2)}", f"{round(123132*100,2)}%")
+col2.metric("Number of positions",
+            number_of_positions, f"{round(0*100,2)}%")
 
-col3.metric("Annual Volatility _expected return",
+col3.metric("XXXXXXXX",
             f"{round(123123, 2)}%", f"{round(12312,2)*100}%")
 
-col4.metric("Sharpe _sortino Raio",
+col4.metric("XXXXXXXX",
             f"{round(12312, 2)}", f"{round(123123, 2)}")
 
 # st.subheader('Transacciones')

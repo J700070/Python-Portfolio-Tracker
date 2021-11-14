@@ -13,7 +13,8 @@ def getPortfolio(df):
     portfolio["Total Invertido"] = portfolio["Valor local"] * -1
 
     # Extra Data
-    totalValue = portfolio['Total Invertido'].sum()
+    total_value = portfolio['Total Invertido'].sum()
+    number_of_positions = len(portfolio.index)
 
     portfolio["Precio Medio ($)"] = portfolio["Total Invertido"] / \
         portfolio["Número"]
@@ -42,10 +43,10 @@ def getPortfolio(df):
     portfolio.insert(3, 'Total Actual ($)',
                      portfolio["Número"] * portfolio["Precio Actual ($)"])
     portfolio.insert(4, '% Portfolio',
-                     portfolio["Total Actual ($)"] / totalValue * 100)
+                     portfolio["Total Actual ($)"] / total_value * 100)
     portfolio.insert(len(portfolio.columns),
                      'Ganancia ($)', portfolio["Total Actual ($)"] - portfolio["Total Invertido ($)"])
     portfolio.insert(len(portfolio.columns), 'Ganancia %',
                      portfolio["Ganancia ($)"] / portfolio["Total Invertido ($)"] * 100)
 
-    return totalValue, portfolio
+    return total_value, number_of_positions, portfolio
