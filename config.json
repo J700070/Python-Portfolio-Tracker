@@ -3,7 +3,18 @@
         "BABA",
         "ATHM",
         "BAM",
-        "FB"
+        "FB",
+        "BTC"
     ],
-    "lastYearPortfolioValue": 895
+    "lastYearPortfolioValue": 895,
+    "other_holdings": [
+        {
+            "Ticker": "BTC",
+            "Producto": "Bitcoin",
+            "Número": "0.0256243",
+            "Precio Medio": "40832.18",
+            "Total Invertido": "775.40"
+        }
+    ],
+    "start_date": "27-02-2020"
 }
